@@ -16,9 +16,6 @@ public class DefenseMonster extends Monster {
     @Override
     public void takeDamage(int damage) {
         damage -= defense;
-        if (damage < 0) {
-            damage = 0;
-        }
         super.takeDamage(damage);
     }
 

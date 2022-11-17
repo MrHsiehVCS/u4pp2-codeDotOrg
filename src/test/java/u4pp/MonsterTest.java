@@ -13,19 +13,19 @@ import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
-public class MonsterTests {
+public class MonsterTest {
 
     private final String NAME = "TestMonster"; 
     private final int MAX_HEALTH = 10; 
     private final int ATTACK = 3; 
-    private final int EXPERIENCE = 5; 
+    private final int EXPERIENCE = 4; 
     Monster testMonster;
     Combatant target;
 
     @BeforeEach
     public void beforeEach() {
         testMonster = new Monster(NAME, MAX_HEALTH, ATTACK, EXPERIENCE);
-        target = new Fighter("TestFighter", MAX_HEALTH, ATTACK);
+        target = new Combatant("TestCombatant", MAX_HEALTH, ATTACK);
 
         testMonster = Mockito.spy(testMonster);
         target = Mockito.spy(target);
@@ -72,12 +72,12 @@ public class MonsterTests {
 
     @Test
     public void toString_hasAllStats() {
-        //name
-        //health
-        //attack
-        //maxhealth
-        //exp
+        testMonster.takeDamage(MAX_HEALTH/2);
         String s = testMonster.toString();
+        assertTrue(s.contains(NAME));
+        assertTrue(s.contains("" + MAX_HEALTH));
+        assertTrue(s.contains("" + (MAX_HEALTH - (MAX_HEALTH/2)))); // current health
+        assertTrue(s.contains("" + ATTACK));
         assertTrue(s.contains("" + testMonster.getExpGiven()));
     }
 

@@ -24,7 +24,7 @@ public class Combatant {
     public void setHealth(int health) {
         this.health = health;
         if(health < 0) {
-            health = 0;
+            this.health = 0;
         }
         if(health > this.maxHealth) {
             this.health = this.maxHealth;
@@ -36,6 +36,9 @@ public class Combatant {
     }
 
     public void setMaxHealth(int maxHealth) {
+        if(maxHealth < 1) {
+            maxHealth = 1;
+        }
         this.maxHealth = maxHealth;
         setHealth(this.health);
     }
@@ -44,11 +47,17 @@ public class Combatant {
         return this.attack;
     }
 
-    public void setAttack(int attack) {
+    public void setAttackPower(int attack) {
         this.attack = attack;
+        if(this.attack < 0) {
+            this.attack = 0;
+        }
     }
 
     public void takeDamage(int damage) {
+        if(damage < 0) {
+            damage = 0;
+        }
         setHealth(this.health - damage);
     }
 

@@ -4,23 +4,23 @@ public class Fighter extends Combatant {
 
     private int exp;
     private int level;
-    private int focusMultiplier;
+    private int focusStacks;
     private boolean isBlocking;
 
     public Fighter(String name, int maxHealth, int attack) {
         super(name, maxHealth, attack);
         level = 1;
         exp = 0;
-        focusMultiplier = 1;
+        focusStacks = 0;
         isBlocking = false;
     }
 
     public void gainEXP(int exp) {
-        exp += exp;
-        while(exp >= this.level) {
-            exp -= this.level;
+        this.exp += exp;
+        while(this.exp >= this.level) {
+            this.exp -= this.level;
             this.level++;
-            setAttack(this.getAttackPower() + 1);
+            setAttackPower(this.getAttackPower() + 1);
             this.setMaxHealth(this.getMaxHealth() + 5);
             this.setHealth(this.getMaxHealth());
         }
@@ -30,21 +30,29 @@ public class Fighter extends Combatant {
         return this.exp;
     }
 
+    public int getFocusStacks() {
+        return focusStacks;
+    }
+
     public int getLevel() {
         return this.level;
     }
 
     public void attack(Combatant target) {
-        target.takeDamage(this.getAttackPower() * focusMultiplier);
-        focusMultiplier = 1;
+        target.takeDamage(this.getAttackPower() * (int)Math.pow(2, focusStacks));
+        focusStacks = 0;
     }
 
     public void block() {
         isBlocking = true;
     }
 
+    public boolean getIsBlocking() {
+        return isBlocking;
+    }
+
     public void focus() {
-        focusMultiplier *= 2;
+        focusStacks++;
     }
 
     @Override
@@ -61,7 +69,7 @@ public class Fighter extends Combatant {
 
     @Override
     public String toString() {
-        return super.toString() + String.format(", LVL:%s, EXP:%s, FOC:%s, BLK:%s", level, exp, focusMultiplier, isBlocking);
+        return super.toString() + String.format(", LVL:%s, EXP:%s, FOC:%s, BLK:%s", level, exp, focusStacks, isBlocking);
     }
     
 
