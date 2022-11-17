@@ -123,6 +123,7 @@ You will create a file called `MonsterFighter.java`, which will have the followi
 - You must include at least 1 normal `Monster`, 1 `RandomMonster`, and 1 `DefenseMonster`.
 - Include as much flavor text as you want.
 - *Hint:* Use `InputHelper` from `u4pp1` & use numbers for options (like when picking what action the `Fighter` will take)
+- *Hint:* if you ever find yourself repeating code, see if you can create a helper function. If you want to, you can even split a large function into a collection of smaller ones to divide and conquer
   
 ## Grading Rubric
 
