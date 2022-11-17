@@ -110,6 +110,7 @@ The `RandomMonster` class should have the following `public` methods:
 
 You will create a file called `MonsterFighter.java`, which will have the following `public` methods: 
 
+- `public MonsterFighter()`
 - `public void play(Scanner scanner)`
 
 ### Gameplay
