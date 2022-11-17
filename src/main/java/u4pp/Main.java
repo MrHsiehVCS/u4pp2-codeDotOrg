@@ -6,8 +6,9 @@ public class Main {
     public static void main(String[] args) {
         // System.out.println("welcome to u4pp! Good luck :)\n"+
         // "(Please delete this line of code before submitting :) )");
-        System.out.println((int)(-1.1));
-        System.out.println((int)(-1.6));
-        System.out.println((int)(-1.9));
+
     }
+    // TODO: Remove old tests & code from u4pp1 (leapyear, mymath)
+    // TODO: entire README (instructions, grading)
+    // TODO: finish a version of MonsterFighter.java
 }
