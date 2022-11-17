@@ -36,6 +36,7 @@ public class MonsterFighter {
         monsters[15] = new RandomMonster("Golem", 50, 15, 100);
     }
 
+    //TODO: Finish this play method!!!!
     public void play(Scanner scanner) {
         inputHelper = new InputHelper(scanner);
         clearScreen();
