@@ -11,13 +11,14 @@ You will create an inheritance hierarchy that looks like this:
      Fighter      Monster
                  /       \
        RandomMonster    DefenseMonster
+
 ## Part A1: Combatant
 
 The `Combatant` class must have the following `public` methods:
 
 ### Constructor
 
-- `public Combatant(String name, int maxHealth, int attack)` - constructor. When constructed, the character should also have a health equal to its max health. 
+- `public Combatant(String name, int maxHealth, int attack)` - constructor. When constructed, the character should also have a health equal to its max health.
 
 ### Getters & Setters
 
@@ -41,7 +42,7 @@ The `Fighter` class can block, focus, or attack. Blocking reduces damage taken b
 
 Must have the following `public` methods:
 
-### Constructor 
+### Constructor
 
 - `public Fighter(String name, int maxHealth, int attack)` - also sets the default level to `1`, with `0` experience, `0` focus stacks, and not blocking.
 
@@ -82,7 +83,7 @@ The `Monster` class should have the following `public` methods:
 
 The `DefenseMonster` class should have the following `public` methods:
 
-### Methods 
+### Methods
 
 - `public DefenseMonster(String name, int health, int attack, int exp, int defense)` - defense is explained in `takeDamage` below
 - `public int getDefense()`
@@ -100,15 +101,14 @@ The `RandomMonster` class should have the following `public` methods:
 
 - `public RandomMonster(String name, int health, int attack, int exp)`
 
-
 ### Overridden Methods
 
-- `public void takeTurn(Combatant target)` - only has a 50% chance of taking a normal Monster turn. Half the time, does nothing. 
+- `public void takeTurn(Combatant target)` - only has a 50% chance of taking a normal Monster turn. Half the time, does nothing.
 - `public String toString()` - has everything that `Monster`'s `toString` does, and also says something that indicates that the monster only has a 50% chance of attacking.
   
 ## Part B: MonsterFighter
 
-You will create a file called `MonsterFighter.java`, which will have the following `public` methods: 
+You will create a file called `MonsterFighter.java`, which will have the following `public` methods:
 
 - `public MonsterFighter()`
 - `public void play(Scanner scanner)`
@@ -117,7 +117,7 @@ You will create a file called `MonsterFighter.java`, which will have the followi
 
 - The player should be able to name their `Fighter`, and then fight a bunch of monsters in succession.
 - The `Fighter` will gain experience each time they defeat a monster.
-- The `Fighter` has 3 possible actions each round: attack, focus, and block. Taking any of these actions will end the `Fighter`'s turn. 
+- The `Fighter` has 3 possible actions each round: attack, focus, and block. Taking any of these actions will end the `Fighter`'s turn.
 - After the `Fighter`'s turn, the current monster will take a turn, targeting the `Fighter`
 - Monsters should have unique names and statistics.
 - You must include at least 1 normal `Monster`, 1 `RandomMonster`, and 1 `DefenseMonster`.
@@ -134,4 +134,4 @@ You will create a file called `MonsterFighter.java`, which will have the followi
 - `MonsterFighter` gameplay functionality (tested manually): 5 pts
 - Clear UI/UX - 2 points
 
-Total: 18 points
+Total: 18 point
