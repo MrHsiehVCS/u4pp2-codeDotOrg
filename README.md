@@ -11,6 +11,9 @@ You will create an inheritance hierarchy that looks like this:
      Fighter      Monster
                  /       \
        RandomMonster    DefenseMonster
+       
+Each class should be in its own file, and extend from the appropriate class, according to the above hierarchy. 
+Classes should inherit/override methods when possible.
 
 ## Part A1: Combatant
 
