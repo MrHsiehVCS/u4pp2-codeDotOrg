@@ -27,7 +27,7 @@ The `Combatant` class must have the following `public` methods:
 - `public int getMaxHealth()`
 - `public int getAttackPower()`
 - `public void setHealth(int health)` - should not allow health to be set below 0, or above the character's max health
-- `public void setMaxHealth(int health)` - should not allow max health to be set to 0 or below
+- `public void setMaxHealth(int health)` - should not allow max health to be set to 0 or below. If the max health is set below the current health, current health should be lowered to the new max health. 
 - `public void setAttackPower(int attackPower)` - should not allow attack power to be set below 0
 
 ### Other Methods
